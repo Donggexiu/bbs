@@ -19,6 +19,7 @@ services:
         command: uwsgi --ini uwsgi.ini
         ports:
         - "8001:8001"
+        - "9000:9000"
         volumes:
         - api_data:/docker_api
 
