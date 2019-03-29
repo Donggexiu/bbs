@@ -10,10 +10,10 @@ services:
         - api_data:/docker_api        
         - ./log:/var/log/nginx              
         depends_on:
-        - api
-        
-    api:
-        container_name: api-container
+        - django
+
+    django:
+        container_name: django-container
         build: ./       
         restart: always
         # command: uwsgi  --emperor uwsgi.ini         
@@ -22,4 +22,4 @@ services:
         - "8000:8000"
         - "8080:8080"
         volumes:
-        - api_data:/docker_api
+        - ./ :/docker_api
