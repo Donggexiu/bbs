@@ -17,7 +17,7 @@ services:
         build: ./       
         restart: always
         # command: uwsgi  --emperor uwsgi.ini         
-        command: ./uwsgi --ini uwsgi.ini
+        command: uwsgi --ini /docker_api/uwsgi.ini
         ports:
         - "8000:8000"
         volumes:
