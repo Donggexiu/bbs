@@ -1,0 +1,25 @@
+version: '3'
+services:
+    nginx:
+        container_name: nginx-container        
+        build: ./nginx
+        restart: always
+        ports:
+        - "80:80" 
+        volumes:        
+        - api_data:/docker_api        
+        - ./log:/var/log/nginx              
+        depends_on:
+        - api
+        
+    api:
+        container_name: api-container
+        build: ./       
+        restart: always
+        # command: uwsgi  --emperor uwsgi.ini         
+        command: uwsgi --ini uwsgi.ini         
+        ports:
+        - "8000:8000"
+        - "8080:8080"
+        volumes:
+        - api_data:/docker_api
