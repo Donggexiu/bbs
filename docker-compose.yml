@@ -15,11 +15,10 @@ services:
         container_name: django-container
         build: ./       
         restart: always
-        # command: uwsgi  --emperor uwsgi.ini         
-        command: uwsgi --ini ./uwsgi.ini
+        # command: uwsgi  --emperor uwsgi.ini
+        command: uwsgi --ini uwsgi.ini
         ports:
         - "8001:8001"
-        - "9000:9000"
         volumes:
         - api_data:/docker_api
 
