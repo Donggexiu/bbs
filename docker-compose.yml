@@ -7,7 +7,7 @@ services:
         ports:
         - "80:80" 
         volumes:        
-        - api_data:/docker_api        
+        - ./:/docker_api
         - ./log:/var/log/nginx              
         depends_on:
         - django
