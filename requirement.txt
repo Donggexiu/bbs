@@ -1,6 +1,6 @@
 beautifulsoup4==4.7.1
 bs4==0.0.1
-Django==2.1.7
+Django==2.1.11
 itsdangerous==1.1.0
 PyMySQL==0.9.3
 pytz==2018.9
